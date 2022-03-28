@@ -29,19 +29,5 @@ export default {
   display: flex;
 
 }
-  .expirence-number-num {
-  color: var(--blue-color);
-  font-family: var(--font_E);
-  font-size: 3.75rem;
-  line-height: 4.125rem;
-  margin: 0;
-}
-
-.expirence-number-text{
-  font-family: var(--font_E);
-  color:var(--textt-color);
-  font-size: 1.31rem;
-  line-height: 1.9375rem;
-  margin: 0;
-}
+  
 </style>
