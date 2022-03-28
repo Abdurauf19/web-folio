@@ -80,12 +80,13 @@ export default {
       border-radius:32px;
       font-family: var(--font_E);
       width: 203px;
+      margin-top: 23px;
     }
 
     .header-awards {
       display: flex;
       align-items: center;
-      padding-top: 100px;
+      padding: 100px 0 50px 0;
       gap: 24px;
     }
 

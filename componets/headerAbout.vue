@@ -21,10 +21,26 @@
         </div>
         <div class="main-expirience">
           <h2 class="main-expirence-title">Trusted by the fastest growing digital startups</h2>
+          <div class="expirence-boxx">
           <div class="expirence-number">
               <h3 class="expirence-number-num">{{Num}}</h3>
               <p class="expirence-number-text">{{Text}}</p>
         </div>
+          <div class="expirence-number">
+              <h3 class="expirence-number-num">{{Num}}</h3>
+              <p class="expirence-number-text">{{Text}}</p>
+        </div>
+          <div class="expirence-number">
+              <h3 class="expirence-number-num">{{Num}}</h3>
+              <p class="expirence-number-text">{{Text}}</p>
+        </div>
+          </div>
+          <div class="expirence-images">
+            <img src="../photos/logo/logo1.png" alt="Logo1">
+            <img src="../photos/logo/logo2.png" alt="Logo2">
+            <img src="../photos/logo/logo3.png" alt="Logo3">
+            <img src="../photos/logo/logo4.png" alt="Logo4">
+          </div>
         </div>
     </div>
       </main>
@@ -43,7 +59,6 @@ export default {
     Text: {
       type:String,
     },
-   
   },
 };
 </script>
@@ -65,9 +80,11 @@ export default {
 /* About comment Start */
 .about-container {
   padding-top: 146px;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
+  gap: 99px;
+  padding-bottom: 200px;
 }
   .main-about-comment {
     display: flex;
@@ -114,6 +131,11 @@ export default {
   }
 
   /* expirence start */
+.expirence-boxx {
+  display: flex;
+  gap: 64px;
+}
+
 .main-expirence-title {
   color: var(--titlee-color);
   font-family: var(--font_E);
@@ -138,7 +160,37 @@ export default {
   line-height: 1.9375rem;
   margin: 0;
 }
+/* Images  */
+.expirence-images {
+  display: flex;
+  padding-top: 72px;
+  gap: 65px;
+}
 
+/* Media start */
+
+@media only screen and (max-width: 1200px) {
+.expirence-images {
+  flex-wrap: wrap;
+}
+.expirence-boxx {
+  flex-wrap: wrap;
+}
+}
+@media only screen and (max-width: 992px) {
+
+}
+@media only screen and (max-width: 768px) {
+.about-container {
+  flex-direction: column;
+  align-items: unset;
+}
+}
+@media only screen and (max-width: 576px) {
+.main-expirence-title {
+  font-size: 2.4rem;
+}
+}
 </style>
 
 
