@@ -135,6 +135,18 @@ a{
       position: static;
       border: 0;
     }
+
+    /* Media responsive */
+
+
+    @media only screen and (max-width: 1200px) {}
+    @media only screen and (max-width: 992px) {
+      .nav-list  {
+        display: none;
+      }
+    }
+    @media only screen and (max-width: 768px) {}
+    @media only screen and (max-width: 576px) {}
     
 
 </style>

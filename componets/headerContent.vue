@@ -2,7 +2,7 @@
   <div>
     <header class="header" id="Header">
       <div class="container header-container">
-        <div class="heade-content">
+        <div class="header-content">
           <h1 class="header-content-title">I design digital products that make an impact.</h1>
           <p class="header-content-text">Hi! Im Alex, a product designer based in Oakland. I create user-friendly interfaces for fast-growing startups.</p>
           <button class="header-content-btn btn">Hire me!</button>
@@ -14,9 +14,8 @@
           </div>
         </div>
         </div>
-        <div>
-          <img src="../photos/header-banner.png" alt="header banner" class="header-img">
-        </div>
+        
+          <img  src="../photos/header-banner.png" alt="header banner" class="header-img">
       </div>
     </header>
     
@@ -96,6 +95,56 @@ export default {
       font-family: var(--font_E);
       font-size: 15px;
       line-height: 22px;
+    }
+
+
+
+    @media only screen and (max-width: 1200px) {
+      .header-content-title {
+        margin: 81px 0 0 0;
+        font-size: 65px;
+      }
+      .header-content-text {
+        max-width: 527px;
+      }
+      .header-img {
+        width: 500px;
+        height: 500px;
+      }
+    }
+    @media only screen and (max-width: 992px) {
+      .header-content {
+        flex-direction: column ;
+      }
+      .header-content-title {
+        font-size: 56px;
+      }
+    }
+    @media only screen and (max-width: 768px) {
+      .header-container {
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      
+      .header-img {
+        width: 648px;
+        height: 770px;
+      }
+      .header-content-title {
+        font-size: 69px;
+      } 
+    }
+    @media only screen and (max-width: 576px) {
+      .header-img {
+        width: 100%;
+        height: 100%;
+      }
+       .header-content-title {
+        font-size: 40px;
+      }  
+      
     }
 
 </style>
