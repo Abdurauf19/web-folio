@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div class="container">
+    <div class="container" id="Work">
       <div class="main-portfolio">
         <div class="main-portfolio-titlee">
           <img src="../photos/icon.png" alt="icon">
-          <h3 class="main-portfolio-textt">work</h3>
+          <h3 class="main-portfolio-textt">{{portfolioTitle}}</h3>
         </div>
-        <h2 class="main-portfolio-title">Bringing stellar results for every client.</h2>
+        <h2 class="main-portfolio-title">{{portfolioText}}.</h2>
       </div>
     </div>
   </div>
@@ -17,15 +17,22 @@
 <script>
 export default {
   props:{
-    portfolio :{
+    portfolioTitle :{
       type:String,
-    }
+    },
+    portfolioText : {
+      type:String,
+    },
+
   }
 }
 </script>
 
 
 <style>
+body {
+  scroll-behavior: smooth;
+}
 /* title work */
   .main-portfolio-titlee{
     display: flex;

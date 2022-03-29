@@ -4,17 +4,18 @@ import '../public/font'
     <header-form/>
     <headerForm :cart="0"/>
     <header-content/>
-    <headerAbout :Num="'7+'" :Text="'Years of experience'" :About="'Working with Alex was interesting. He went above and beyond what I\'ve asking for and provided such an amazing design for my mobile application.'" />
+    <headerAbout  :Num="'7+'" :Text="'Years of experience'" :About="'Working with Alex was interesting. He went above and beyond what I\'ve asking for and provided such an amazing design for my mobile application.'" />
   </div>
-    <main-portfolio />
+
+  <div v-for="(item, index) in datas" :key="index" >
+    <main-portfolio :portfolioTitle="item.titlee" :portfolioText="item.textt"/>
+  </div>
 
     <div v-for="(item, index) in data" :key="index">
         <mainPortfolioImg :text="item.text" :title="item.title" :img="item.img" :btn="item.btn" />
     </div>
     
-   <!-- <div v-for="(item, ind) in data" :key="ind">
-    <headerAbout :Text="item.text" :Num="item.num"/>
-  </div> -->
+    
   
 </template>
 
@@ -26,8 +27,8 @@ import headerContent from '../componets/headerContent.vue';
 import headerAbout from '../componets/headerAbout.vue';
 import mainPortfolio from '../componets/mainPartfolio.vue';
 import mainPortfolioImg from '../componets/_mainPortfolioImg.vue'
-// import headerCom from '../componets/headerAbout.vue'
-// import headerAboutCom from '../componets/headerAboutcom.vue';
+import mainServise from '../componets/mainServise.vue'
+
 
 
 export default {
@@ -38,7 +39,7 @@ export default {
     headerAbout,
     mainPortfolio,
     mainPortfolioImg,
-    // headerAboutCom,
+    mainServise,
   },
   
   data() {
@@ -72,7 +73,14 @@ export default {
            text:"Vivamus mattis eu odio non aliquam. Vestibulum tristique congue laoreet. Nulla facilisi.",
            img: require('../photos/portfolioimg/portolio5.png'), 
          },
-       ],    
+       ], 
+       datas :[
+         {
+           titlee:"Work",
+           textt: "Bringing stellar results for every client."
+         },
+         
+       ]   
     }
   },
 

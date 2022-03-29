@@ -5,8 +5,8 @@
      <!-- Logo -->
      <a href="#" class="header-nav-logo"><img src="../photos/logo.png" alt="Logo"></a>
      <ul class="nav-list">
-       <li class="nav-item"><a href="#" class="nav-link">Work</a></li>
-       <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+       <li class="nav-item"><a href="#Work" class="nav-link">Work</a></li>
+       <li class="nav-item"><a href="#About" class="nav-link">About</a></li>
        <li class="nav-item"><a href="#" class="nav-link">Shop</a></li>
        <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
        <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
@@ -14,14 +14,18 @@
      <!-- Hamburger icon -->
      <div class="nav-cart">
        <h1 class="nav-cart-title" @click="cart++">Cart({{cart}})</h1>
-       <div class="nav-cart-hamburger">
+       <div class="nav-cart-hamburger" @click="togglebox" >
          <div class="hamburger-line"></div>
          <div class="hamburger-line"></div>
        </div>
      </div>
     </nav>
-       <nav class="header-side-bar">
+       <nav class="header-side-bar" v-if="sideBox">
          <a href="#" class="side-bar"><img src="../photos/logo.png" alt="Logo"></a>
+         <div class="side-bar__close" @click="togglebox">
+           <div class="sidebar-close__line line1"></div>
+           <div class="sidebar-close__line line2"></div>
+         </div>
          <ul class="side-bar-list">
            <li class="side-bar-item"><a href="#Work" class="side-bar-link">Work</a></li>
            <li class="side-bar-item"><a href="#About" class="side-bar-link">About</a></li>
@@ -35,11 +39,22 @@
 
 <script>
 export default {
+  data() {
+    return {
+      sideBox:false
+    }
+  },
   props: {
     cart : {
       type : Number,
+    },
+  },
+
+  methods: {
+    togglebox() {
+      this.sideBox = !this.sideBox
     }
-  }
+  },
 }
 </script>
 
@@ -55,6 +70,7 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 ul {
@@ -88,11 +104,12 @@ a{
 
   .header-side-bar {
     position: fixed;
-    left: -100%;
     background-color: #010032;
-    width: 50%;
-    height: 600px;
+    width: 60%;
+    height: 100%;
     margin-left: auto;
+    transition: all .4s ease-in-out;
+    cursor: pointer;
   }
   .side-bar-list {
     display: flex;
@@ -111,8 +128,27 @@ a{
       width: 25px;
       height: 2px;
       background: #ffff;
-      margin: 6px;
+      margin-top: 6px;
       cursor: pointer;
+      z-index: 999;
+    }
+  .side-bar__close {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+    .sidebar-close__line {
+      width: 41px;
+      height: 3px;
+      background: #ffff;
+      cursor: pointer;
+      z-index: 999;
+    }
+    .line1{
+      transform: rotate(45deg);
+    }
+    .line2 {
+      transform: rotate(-45deg);
     }
     .header-nav img{
       margin: 28px 0 23px 0;
@@ -145,7 +181,11 @@ a{
         display: none;
       }
     }
-    @media only screen and (max-width: 768px) {}
+    @media only screen and (max-width: 768px) {
+      .header-side-bar {
+        width: 100%;
+      }
+    }
     @media only screen and (max-width: 576px) {}
     
 

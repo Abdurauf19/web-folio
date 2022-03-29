@@ -1,6 +1,6 @@
 <template>
   <div>
-      <main class="main">
+      <main class="main" id="About">
     <div class="container about-container">
         <div class="main-about">
           <div class="main-about-comment">
