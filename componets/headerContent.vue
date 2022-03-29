@@ -26,7 +26,7 @@
 <script>
 export default {
   props: {
-
+    
   }
 }
 </script>
@@ -60,6 +60,7 @@ export default {
       color: var(--title-color);
       font-family: var(--font_E);
       font-size: 4.5rem;
+      padding: 120px 0 34px 0;
       line-height: 4.75rem;
       max-width: 604px;
     }

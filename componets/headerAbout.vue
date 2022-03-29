@@ -83,7 +83,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 99px;
+  gap: 41px;
   padding-bottom: 200px;
 }
   .main-about-comment {
@@ -114,6 +114,7 @@ export default {
     display: flex;
     align-items: center;
    column-gap: 1.5rem;
+   padding-top: 27px;
   }
   .user-content-name {
      font-size: 1.125em;
@@ -163,6 +164,7 @@ export default {
 /* Images  */
 .expirence-images {
   display: flex;
+  justify-content: center;
   padding-top: 72px;
   gap: 65px;
 }
@@ -175,6 +177,7 @@ export default {
 }
 .expirence-boxx {
   flex-wrap: wrap;
+  justify-content: center
 }
 }
 @media only screen and (max-width: 992px) {
@@ -190,6 +193,10 @@ export default {
 .main-expirence-title {
   font-size: 2.4rem;
 }
+}
+
+@media only screen and (max-width: 320px){
+  
 }
 </style>
 
